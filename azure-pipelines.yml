@@ -6,7 +6,7 @@
 trigger:
 - main
 
-pool: Test-my-computer
+pool: Test_Agent
 
 
 steps:
