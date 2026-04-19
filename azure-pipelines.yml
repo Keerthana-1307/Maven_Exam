@@ -10,13 +10,16 @@ pool: Test_Agent
 
 
 steps:
-- task: Maven@3
+- task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.11'
-    jdkArchitectureOption: 'x64'
+    goals: 'compile'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'compile'
+    javaHomeOption: 'JDKVersion'
+    mavenOptions: '-Xmx3072m'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
+   
